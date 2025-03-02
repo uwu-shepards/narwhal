@@ -20,13 +20,16 @@ import (
 	authcmd "github.com/cosmos/cosmos-sdk/x/auth/client/cli"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 	"github.com/cosmos/cosmos-sdk/x/crisis"
+	"github.com/cosmos/cosmos-sdk/x/genutil"
 	genutilcli "github.com/cosmos/cosmos-sdk/x/genutil/client/cli"
+	genutiltypes "github.com/cosmos/cosmos-sdk/x/genutil/types"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
+	"narwhal/app"
+
 	"github.com/CosmWasm/wasmd/x/wasm"
 	wasmcli "github.com/CosmWasm/wasmd/x/wasm/client/cli"
-	"narwhal/app"
 )
 
 func initRootCmd(
@@ -46,7 +49,7 @@ func initRootCmd(
 
 	server.AddCommands(rootCmd, app.DefaultNodeHome, newApp, appExport, addModuleInitFlags)
 
-	validateGenesisCmd := genutilcli.ValidateGenesisCmd(basicManager)
+	gentxModule := basicManager[genutiltypes.ModuleName].(genutil.AppModuleBasic)
 
 	// add keybase, auxiliary RPC, query, genesis, and tx child commands
 	rootCmd.AddCommand(
@@ -55,7 +58,14 @@ func initRootCmd(
 		queryCommand(),
 		txCommand(),
 		keys.Commands(),
-		validateGenesisCmd,
+
+		// FIX for https://github.com/ignite/cli-plugin-network/issues/27#issuecomment-2016686470
+		genutilcli.GenTxCmd(basicManager, txConfig, banktypes.GenesisBalancesIterator{}, app.DefaultNodeHome, txConfig.SigningContext().ValidatorAddressCodec()),
+		genutilcli.MigrateGenesisCmd(genutilcli.MigrationMap),
+		genutilcli.CollectGenTxsCmd(banktypes.GenesisBalancesIterator{}, app.DefaultNodeHome, gentxModule.GenTxValidator, txConfig.SigningContext().ValidatorAddressCodec()),
+		genutilcli.ValidateGenesisCmd(basicManager),
+		genutilcli.AddGenesisAccountCmd(app.DefaultNodeHome, txConfig.SigningContext().AddressCodec()),
+		genutilcli.ValidateGenesisCmd(basicManager),
 	)
 	wasmcli.ExtendUnsafeResetAllCmd(rootCmd)
 
