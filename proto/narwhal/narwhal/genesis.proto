@@ -1,0 +1,17 @@
+syntax = "proto3";
+package narwhal.narwhal;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+import "narwhal/narwhal/params.proto";
+
+option go_package = "narwhal/x/narwhal/types";
+
+// GenesisState defines the narwhal module's genesis state.
+message GenesisState {
+  // params defines all the parameters of the module.
+  Params params = 1 [
+    (gogoproto.nullable) = false,
+    (amino.dont_omitempty) = true
+  ];
+}

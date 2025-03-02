@@ -1,0 +1,21 @@
+validation: sovereign
+version: 1
+accounts:
+- name: smoothiepool
+  coins:
+  - 400000000000narwhal
+- name: faucet
+  coins:
+  - 100000000narwhal
+faucet:
+  name: faucet
+  coins:
+  - 100000narwhal
+client:
+  typescript:
+    path: ts-client
+  openapi:
+    path: docs/static/openapi.yml
+validators:
+- name: smoothiepool
+  bonded: 200000000000narwhal
