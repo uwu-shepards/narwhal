@@ -24,6 +24,8 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
+	"github.com/CosmWasm/wasmd/x/wasm"
+	wasmcli "github.com/CosmWasm/wasmd/x/wasm/client/cli"
 	"narwhal/app"
 )
 
@@ -52,10 +54,14 @@ func initRootCmd(
 		txCommand(),
 		keys.Commands(),
 	)
+	wasmcli.ExtendUnsafeResetAllCmd(rootCmd)
+
 }
 
 func addModuleInitFlags(startCmd *cobra.Command) {
 	crisis.AddModuleInitFlags(startCmd)
+	wasm.AddModuleInitFlags(startCmd)
+
 }
 
 // genesisCommand builds genesis-related `narwhald genesis` command. Users may provide application specific commands as a parameter
