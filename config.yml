@@ -1,8 +1,6 @@
 validation: sovereign
 version: 1
 chain_id: "narwhal-1"
-client:
-  source_url: "https://github.com/uwu-shepards/narwhal"
 accounts:
 - name: smoothiepool
   coins:
@@ -15,6 +13,7 @@ faucet:
   coins:
   - 100000narwhal
 client:
+  source_url: "https://github.com/uwu-shepards/narwhal"
   typescript:
     path: ts-client
   openapi:
