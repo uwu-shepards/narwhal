@@ -43,7 +43,7 @@ jobs:
           tag_name: ${{ steps.vars.outputs.tag_name }}
           delete_release: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
 
       - name: Publish the Release
         uses: softprops/action-gh-release@v1
@@ -53,4 +53,4 @@ jobs:
           files: release/*
           prerelease: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
