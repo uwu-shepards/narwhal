@@ -2,6 +2,11 @@
 
 ![image](https://github.com/user-attachments/assets/8c0a6698-4926-49f2-8bbe-eb8c470e608f)
 
+### Official RPC
+```
+https://rpc.uwupunks.com
+```
+
 Never forget what they took from us
 
 ▄︻デ ══‐一 ❤️
@@ -50,7 +55,7 @@ After a draft release is created, make your final changes from the release page 
 To install the latest version of your blockchain node's binary, execute the following command on your machine:
 
 ```
-curl https://get.ignite.com/uwu-shepards/narwhal@latest! | sudo bash
+curl https://get.ignite.com/uwu-shepards/narwhal! | sudo bash
 ```
 
 Learn more about [the install process](https://github.com/allinbits/starport-installer).
