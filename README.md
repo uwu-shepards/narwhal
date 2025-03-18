@@ -15,7 +15,7 @@ Never forget what they took from us
 
 ▄︻デ ══‐一 ❤️
 
-Censorship is the enemy
+Censorship is the enemy.
 
 ### Install
 
