@@ -40,7 +40,7 @@ minimum-gas-prices = "0narwhal"
 `nano ~/.narwhal/config/config.toml `
 ```
 seeds = "6b37a66a808b986a4cb33c0249166010bf0b32bf@p2p.uwupunks.com:26656"
-persistent_peers = "6b37a66a808b986a4cb33c0249166010bf0b32bf@p2p.uwupunks.com:26656" 
+persistent_peers = "6b37a66a808b986a4cb33c0249166010bf0b32bf@p2p.uwupunks.com:26656,346557c007aeb7fc28ce8a53ac8322faf8d087f7@kaijunicorn.uwupunks.com:26656" 
 ```
 
 `nano ~/.narwhal/config/genesis.json`
