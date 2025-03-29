@@ -19,7 +19,7 @@ Censorship is the enemy.
 
 ### Install
 
-`curl https://get.ignite.com/uwu-shepards/narwhal! | sudo bash`
+`curl https://get.ignite.com/uwupunks/narwhal! | sudo bash`
 
 `wget https://github.com/CosmWasm/wasmvm/releases/download/v2.2.1/libwasmvm.x86_64.so`
 
