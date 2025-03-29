@@ -2,9 +2,16 @@
 
 ![image](https://github.com/user-attachments/assets/8c0a6698-4926-49f2-8bbe-eb8c470e608f)
 
-### Official RPC
+### Official RPCs
 ```
 https://rpc.uwupunks.com
+https://narwhal.uwupunks.com/
+```
+
+### Peers
+```
+6b37a66a808b986a4cb33c0249166010bf0b32bf@p2p.uwupunks.com:26656
+346557c007aeb7fc28ce8a53ac8322faf8d087f7@kaijunicorn.uwupunks.com:26656
 ```
 
 Never forget what they took from us
