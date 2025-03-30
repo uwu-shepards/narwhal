@@ -54,3 +54,30 @@ persistent_peers = "6b37a66a808b986a4cb33c0249166010bf0b32bf@p2p.uwupunks.com:26
 cd ~/.narwhal/config
 curl -s https://rpc.uwupunks.com/genesis | jq -r '.result.genesis' > genesis.json
 ```
+
+# Start the chain
+`narwhal start`
+
+
+# Running as a service
+
+You may wish to run the chain as a `systemctl` service so that it runs on boot and logs can be accessed via `journalctl`. Below is a unit file you can use:
+
+`/etc/systemd/system/narwhal.service`
+```
+[Unit]
+Description=Narwhal Full Node Service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=<your user name>
+Group=<your group>
+ExecStart=/usr/local/bin/narwhal start
+Restart=always
+RestartSec=3
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+```
