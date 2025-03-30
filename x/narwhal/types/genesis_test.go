@@ -3,7 +3,7 @@ package types_test
 import (
 	"testing"
 
-	"narwhal/x/narwhal/types"
+	"github.com/uwupunks/narwhal/x/narwhal/types"
 
 	"github.com/stretchr/testify/require"
 )

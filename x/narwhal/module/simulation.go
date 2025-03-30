@@ -8,9 +8,9 @@ import (
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	"github.com/cosmos/cosmos-sdk/x/simulation"
 
-	"narwhal/testutil/sample"
-	narwhalsimulation "narwhal/x/narwhal/simulation"
-	"narwhal/x/narwhal/types"
+	"github.com/uwupunks/narwhal/testutil/sample"
+	narwhalsimulation "github.com/uwupunks/narwhal/x/narwhal/simulation"
+	"github.com/uwupunks/narwhal/x/narwhal/types"
 )
 
 // avoid unused import issue

@@ -3,9 +3,9 @@ package narwhal.narwhal;
 
 import "amino/amino.proto";
 import "gogoproto/gogo.proto";
-import "narwhal/narwhal/params.proto";
+import "github.com/uwupunks/narwhal/narwhal/params.proto";
 
-option go_package = "narwhal/x/narwhal/types";
+option go_package = "github.com/uwupunks/narwhal/x/narwhal/types";
 
 // GenesisState defines the narwhal module's genesis state.
 message GenesisState {

@@ -4,8 +4,7 @@ import (
 	"context"
 
 	"github.com/cosmos/cosmos-sdk/runtime"
-
-	"narwhal/x/narwhal/types"
+	"github.com/uwupunks/narwhal/x/narwhal/types"
 )
 
 // GetParams get all parameters as types.Params

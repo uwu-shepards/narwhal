@@ -49,14 +49,15 @@ import (
 	capabilitytypes "github.com/cosmos/ibc-go/modules/capability/types"
 	icatypes "github.com/cosmos/ibc-go/v8/modules/apps/27-interchain-accounts/types"
 	ibcfeetypes "github.com/cosmos/ibc-go/v8/modules/apps/29-fee/types"
+	tokenfactorytypes "github.com/uwupunks/narwhal/x/narwhal/tokenfactory/types"
 	ibctransfertypes "github.com/cosmos/ibc-go/v8/modules/apps/transfer/types"
 	ibcexported "github.com/cosmos/ibc-go/v8/modules/core/exported"
 	"google.golang.org/protobuf/types/known/durationpb"
 
 	wasmtypes "github.com/CosmWasm/wasmd/x/wasm/types"
-	narwhalmodulev1 "narwhal/api/narwhal/narwhal/module"
-	_ "narwhal/x/narwhal/module" // import for side-effects
-	narwhalmoduletypes "narwhal/x/narwhal/types"
+	narwhalmodulev1 "github.com/uwupunks/narwhal/api/narwhal/narwhal/module"
+	_ "github.com/uwupunks/narwhal/x/narwhal/module" // import for side-effects
+	narwhalmoduletypes "github.com/uwupunks/narwhal/x/narwhal/types"
 	// this line is used by starport scaffolding # stargate/app/moduleImport
 )
 
@@ -96,6 +97,7 @@ var (
 		// chain modules
 		narwhalmoduletypes.ModuleName,
 		wasmtypes.ModuleName,
+		tokenfactorytypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/initGenesis
 	}
 
@@ -122,6 +124,7 @@ var (
 		// chain modules
 		narwhalmoduletypes.ModuleName,
 		wasmtypes.ModuleName,
+		tokenfactorytypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/beginBlockers
 	}
 
@@ -142,6 +145,7 @@ var (
 		// chain modules
 		narwhalmoduletypes.ModuleName,
 		wasmtypes.ModuleName,
+		tokenfactorytypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/endBlockers
 	}
 
@@ -152,17 +156,18 @@ var (
 
 	// module account permissions
 	moduleAccPerms = []*authmodulev1.ModuleAccountPermission{
-		{Account: authtypes.FeeCollectorName},
-		{Account: distrtypes.ModuleName},
+		{Account: authtypes.FeeCollectorName, Permissions: nil},
+		{Account: distrtypes.ModuleName, Permissions: nil},
 		{Account: minttypes.ModuleName, Permissions: []string{authtypes.Minter}},
 		{Account: stakingtypes.BondedPoolName, Permissions: []string{authtypes.Burner, stakingtypes.ModuleName}},
 		{Account: stakingtypes.NotBondedPoolName, Permissions: []string{authtypes.Burner, stakingtypes.ModuleName}},
 		{Account: govtypes.ModuleName, Permissions: []string{authtypes.Burner}},
-		{Account: nft.ModuleName},
+		{Account: nft.ModuleName, Permissions: nil},
 		{Account: ibctransfertypes.ModuleName, Permissions: []string{authtypes.Minter, authtypes.Burner}},
-		{Account: ibcfeetypes.ModuleName},
-		{Account: icatypes.ModuleName},
+		{Account: ibcfeetypes.ModuleName, Permissions: nil},
+		{Account: icatypes.ModuleName, Permissions: nil},
 		{Account: wasmtypes.ModuleName, Permissions: []string{authtypes.Burner}},
+		{Account: tokenfactorytypes.ModuleName, Permissions: []string{authtypes.Minter, authtypes.Burner}},
 		// this line is used by starport scaffolding # stargate/app/maccPerms
 	}
 
@@ -301,6 +306,10 @@ var (
 			{
 				Name:   narwhalmoduletypes.ModuleName,
 				Config: appconfig.WrapAny(&narwhalmodulev1.Module{}),
+			},
+			{
+				Name: tokenfactorytypes.ModuleName,
+				Config: appconfig.WrapAny(&tokenfactorytypes.Module{}),
 			},
 			// this line is used by starport scaffolding # stargate/app/moduleConfig
 		},

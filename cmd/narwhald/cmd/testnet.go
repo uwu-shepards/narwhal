@@ -26,7 +26,7 @@ import (
 	"github.com/spf13/cast"
 	"github.com/spf13/cobra"
 
-	"narwhal/app"
+	"github.com/uwupunks/narwhal/app"
 )
 
 const (

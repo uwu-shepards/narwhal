@@ -17,8 +17,8 @@ import (
 	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
 	"github.com/stretchr/testify/require"
 
-	"narwhal/x/narwhal/keeper"
-	"narwhal/x/narwhal/types"
+	"github.com/uwupunks/narwhal/x/narwhal/keeper"
+	"github.com/uwupunks/narwhal/x/narwhal/types"
 )
 
 func NarwhalKeeper(t testing.TB) (keeper.Keeper, sdk.Context) {

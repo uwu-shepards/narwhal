@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"narwhal/x/narwhal/types"
+	"github.com/uwupunks/narwhal/x/narwhal/types"
 )
 
 var _ types.QueryServer = Keeper{}

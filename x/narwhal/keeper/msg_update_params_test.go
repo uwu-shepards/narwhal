@@ -6,7 +6,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/require"
 
-	"narwhal/x/narwhal/types"
+	"github.com/uwupunks/narwhal/x/narwhal/types"
 )
 
 func TestMsgUpdateParams(t *testing.T) {

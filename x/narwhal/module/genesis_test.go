@@ -3,10 +3,10 @@ package narwhal_test
 import (
 	"testing"
 
-	keepertest "narwhal/testutil/keeper"
-	"narwhal/testutil/nullify"
-	narwhal "narwhal/x/narwhal/module"
-	"narwhal/x/narwhal/types"
+	keepertest "github.com/uwupunks/narwhal/testutil/keeper"
+	"github.com/uwupunks/narwhal/testutil/nullify"
+	narwhal "github.com/uwupunks/narwhal/x/narwhal/module"
+	"github.com/uwupunks/narwhal/x/narwhal/types"
 
 	"github.com/stretchr/testify/require"
 )

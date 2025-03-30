@@ -20,7 +20,7 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 
-	"narwhal/app"
+	"github.com/uwupunks/narwhal/app"
 )
 
 // NewRootCmd creates a new root command for narwhald. It is called once in the main function.

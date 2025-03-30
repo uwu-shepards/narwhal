@@ -1,8 +1,6 @@
 package keeper
 
-import (
-	"narwhal/x/narwhal/types"
-)
+import "github.com/uwupunks/narwhal/x/narwhal/types"
 
 type msgServer struct {
 	Keeper

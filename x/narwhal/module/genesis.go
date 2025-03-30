@@ -3,8 +3,8 @@ package narwhal
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"narwhal/x/narwhal/keeper"
-	"narwhal/x/narwhal/types"
+	"github.com/uwupunks/narwhal/x/narwhal/keeper"
+	"github.com/uwupunks/narwhal/x/narwhal/types"
 )
 
 // InitGenesis initializes the module's state from a provided genesis state.

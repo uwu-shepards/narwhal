@@ -7,7 +7,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/testutil/network"
 	"github.com/stretchr/testify/require"
 
-	"narwhal/app"
+	"github.com/uwupunks/narwhal/app"
 )
 
 type (

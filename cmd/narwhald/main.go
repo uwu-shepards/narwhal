@@ -7,8 +7,8 @@ import (
 	clienthelpers "cosmossdk.io/client/v2/helpers"
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
 
-	"narwhal/app"
-	"narwhal/cmd/narwhald/cmd"
+	"github.com/uwupunks/narwhal/app"
+	"github.com/uwupunks/narwhal/cmd/narwhald/cmd"
 )
 
 func main() {

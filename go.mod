@@ -1,6 +1,8 @@
-module narwhal
+module github.com/uwupunks/narwhal
 
 go 1.23.6
+
+replace github.com/uwupunks/narwhal => /Users/mark/narwhal
 
 replace (
 	// fix upstream GHSA-h395-qcrw-5vmq vulnerability.

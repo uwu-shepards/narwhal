@@ -4,11 +4,11 @@ package narwhal.narwhal;
 import "amino/amino.proto";
 import "gogoproto/gogo.proto";
 
-option go_package = "narwhal/x/narwhal/types";
+option go_package = "github.com/uwupunks/narwhal/x/narwhal/types";
 
 // Params defines the parameters for the module.
 message Params {
-  option (amino.name) = "narwhal/x/narwhal/Params";
+  option (amino.name) = "github.com/uwupunks/narwhal/x/narwhal/Params";
   option (gogoproto.equal) = true;
 
   

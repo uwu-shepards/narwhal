@@ -3,7 +3,7 @@ package narwhal
 import (
 	autocliv1 "cosmossdk.io/api/cosmos/autocli/v1"
 
-	modulev1 "narwhal/api/narwhal/narwhal"
+	modulev1 "github.com/uwupunks/narwhal/api/narwhal/narwhal"
 )
 
 // AutoCLIOptions implements the autocli.HasAutoCLIConfig interface.

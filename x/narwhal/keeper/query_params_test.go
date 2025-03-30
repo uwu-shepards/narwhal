@@ -5,8 +5,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	keepertest "narwhal/testutil/keeper"
-	"narwhal/x/narwhal/types"
+	keepertest "github.com/uwupunks/narwhal/testutil/keeper"
+	"github.com/uwupunks/narwhal/x/narwhal/types"
 )
 
 func TestParamsQuery(t *testing.T) {

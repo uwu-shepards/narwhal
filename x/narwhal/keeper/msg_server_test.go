@@ -5,10 +5,10 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/require"
+	"github.com/uwupunks/narwhal/x/narwhal/keeper"
 
-	keepertest "narwhal/testutil/keeper"
-	"narwhal/x/narwhal/keeper"
-	"narwhal/x/narwhal/types"
+	keepertest "github.com/uwupunks/narwhal/testutil/keeper"
+	"github.com/uwupunks/narwhal/x/narwhal/types"
 )
 
 func setupMsgServer(t testing.TB) (keeper.Keeper, types.MsgServer, context.Context) {

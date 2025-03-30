@@ -32,7 +32,7 @@ import (
 	"github.com/spf13/viper"
 	"github.com/stretchr/testify/require"
 
-	"narwhal/app"
+	"github.com/uwupunks/narwhal/app"
 )
 
 const (

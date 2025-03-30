@@ -75,12 +75,13 @@ import (
 	ibctransferkeeper "github.com/cosmos/ibc-go/v8/modules/apps/transfer/keeper"
 	ibckeeper "github.com/cosmos/ibc-go/v8/modules/core/keeper"
 
-	narwhalmodulekeeper "narwhal/x/narwhal/keeper"
+	narwhalmodulekeeper "github.com/uwupunks/narwhal/x/narwhal/keeper"
 	// this line is used by starport scaffolding # stargate/app/moduleImport
 
 	wasmkeeper "github.com/CosmWasm/wasmd/x/wasm/keeper"
 	tmproto "github.com/cometbft/cometbft/proto/tendermint/types"
-	"narwhal/docs"
+	"github.com/uwupunks/narwhal/docs"
+	tokenfactorykeeper "github.com/uwupunks/narwhal/x/narwhal/tokenfactory/keeper"
 )
 
 const (
@@ -144,6 +145,7 @@ type App struct {
 	ScopedKeepers             map[string]capabilitykeeper.ScopedKeeper
 
 	NarwhalKeeper narwhalmodulekeeper.Keeper
+	TokenFactoryKeeper tokenfactorykeeper.Keeper
 
 	// CosmWasm
 	WasmKeeper       wasmkeeper.Keeper
@@ -205,7 +207,8 @@ func New(
 	baseAppOptions ...func(*baseapp.BaseApp),
 ) (*App, error) {
 	var (
-		app        = &App{ScopedKeepers: make(map[string]capabilitykeeper.ScopedKeeper)}
+		app = &App{ScopedKeepers: make(map[string]capabilitykeeper.ScopedKeeper)}
+
 		appBuilder *runtime.AppBuilder
 
 		// merge the AppConfig and other configuration in one config
@@ -253,6 +256,7 @@ func New(
 		&app.GroupKeeper,
 		&app.CircuitBreakerKeeper,
 		&app.NarwhalKeeper,
+		&app.TokenFactoryKeeper,
 		// this line is used by starport scaffolding # stargate/app/keeperDefinition
 	); err != nil {
 		panic(err)

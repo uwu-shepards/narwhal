@@ -20,9 +20,9 @@ import (
 
 	// this line is used by starport scaffolding # 1
 
-	modulev1 "narwhal/api/narwhal/narwhal/module"
-	"narwhal/x/narwhal/keeper"
-	"narwhal/x/narwhal/types"
+	modulev1 "github.com/uwupunks/narwhal/api/narwhal/narwhal/module"
+	"github.com/uwupunks/narwhal/x/narwhal/keeper"
+	"github.com/uwupunks/narwhal/x/narwhal/types"
 )
 
 var (
