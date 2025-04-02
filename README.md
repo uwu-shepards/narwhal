@@ -28,6 +28,7 @@ Censorship is the enemy.
 
 `curl https://get.ignite.com/uwupunks/narwhal! | sudo bash`
 
+### Get libwasmvm
 `wget https://github.com/CosmWasm/wasmvm/releases/download/v2.2.1/libwasmvm.x86_64.so`
 
 ```
@@ -37,8 +38,13 @@ sudo ldconfig
 ldconfig -p | grep libwasmvm
 ```
 
+### Initialize
 `narwhal init uwupunks`
 
+
+### Configure
+
+Setup gas prices and peers. 
 ```
 nano ~/.narwhal/config/app.toml
 minimum-gas-prices = "0narwhal"
@@ -50,12 +56,13 @@ seeds = "6b37a66a808b986a4cb33c0249166010bf0b32bf@p2p.uwupunks.com:26656"
 persistent_peers = "6b37a66a808b986a4cb33c0249166010bf0b32bf@p2p.uwupunks.com:26656,346557c007aeb7fc28ce8a53ac8322faf8d087f7@kaijunicorn.uwupunks.com:26656" 
 ```
 
+### Get Genesis File
 ```
 cd ~/.narwhal/config
 curl -s https://rpc.uwupunks.com/genesis | jq -r '.result.genesis' > genesis.json
 ```
 
-# Start the chain
+### Start the chain
 `narwhal start`
 
 
