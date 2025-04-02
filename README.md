@@ -39,7 +39,7 @@ ldconfig -p | grep libwasmvm
 ```
 
 ### Initialize
-`narwhal init uwupunks`
+`narwhal init <your validator moniker>`
 
 
 ### Configure
