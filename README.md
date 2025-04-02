@@ -25,13 +25,13 @@ Never forget what they took from us
 Censorship is the enemy.
 
 ### Install
-
-`curl https://get.ignite.com/uwupunks/narwhal! | sudo bash`
+```
+curl https://get.ignite.com/uwupunks/narwhal! | sudo bash
+```
 
 ### Get libwasmvm
-`wget https://github.com/CosmWasm/wasmvm/releases/download/v2.2.1/libwasmvm.x86_64.so`
-
 ```
+wget https://github.com/CosmWasm/wasmvm/releases/download/v2.2.1/libwasmvm.x86_64.so
 sudo mv libwasmvm.x86_64.so /usr/local/lib/
 sudo chmod 755 /usr/local/lib/libwasmvm.x86_64.so
 sudo ldconfig
@@ -39,7 +39,9 @@ ldconfig -p | grep libwasmvm
 ```
 
 ### Initialize
-`narwhal init <your validator moniker>`
+```
+narwhal init <your validator moniker>
+```
 
 
 ### Configure
@@ -47,10 +49,14 @@ ldconfig -p | grep libwasmvm
 Setup gas prices and peers. 
 ```
 nano ~/.narwhal/config/app.toml
-minimum-gas-prices = "0narwhal"
+```
+`minimum-gas-prices = "0narwhal"`
+
+
+```
+nano ~/.narwhal/config/config.toml
 ```
 
-`nano ~/.narwhal/config/config.toml `
 ```
 seeds = "6b37a66a808b986a4cb33c0249166010bf0b32bf@p2p.uwupunks.com:26656"
 persistent_peers = "6b37a66a808b986a4cb33c0249166010bf0b32bf@p2p.uwupunks.com:26656,346557c007aeb7fc28ce8a53ac8322faf8d087f7@kaijunicorn.uwupunks.com:26656" 
@@ -63,7 +69,9 @@ curl -s https://rpc.uwupunks.com/genesis | jq -r '.result.genesis' > genesis.jso
 ```
 
 ### Start the chain
-`narwhal start`
+```
+narwhal start
+```
 
 
 # Running as a service
