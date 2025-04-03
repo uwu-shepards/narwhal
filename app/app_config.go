@@ -49,15 +49,15 @@ import (
 	capabilitytypes "github.com/cosmos/ibc-go/modules/capability/types"
 	icatypes "github.com/cosmos/ibc-go/v8/modules/apps/27-interchain-accounts/types"
 	ibcfeetypes "github.com/cosmos/ibc-go/v8/modules/apps/29-fee/types"
-	tokenfactorytypes "github.com/uwupunks/narwhal/x/narwhal/tokenfactory/types"
 	ibctransfertypes "github.com/cosmos/ibc-go/v8/modules/apps/transfer/types"
 	ibcexported "github.com/cosmos/ibc-go/v8/modules/core/exported"
 	"google.golang.org/protobuf/types/known/durationpb"
-
+	tokenfactorytypes "github.com/uwupunks/narwhal/x/narwhal/tokenfactory/types"
 	wasmtypes "github.com/CosmWasm/wasmd/x/wasm/types"
 	narwhalmodulev1 "github.com/uwupunks/narwhal/api/narwhal/narwhal/module"
 	_ "github.com/uwupunks/narwhal/x/narwhal/module" // import for side-effects
 	narwhalmoduletypes "github.com/uwupunks/narwhal/x/narwhal/types"
+	tokenfactorymodulev1 "github.com/uwupunks/narwhal/api/osmosis/tokenfactory/module"
 	// this line is used by starport scaffolding # stargate/app/moduleImport
 )
 
@@ -309,7 +309,7 @@ var (
 			},
 			{
 				Name: tokenfactorytypes.ModuleName,
-				Config: appconfig.WrapAny(&tokenfactorytypes.Module{}),
+				Config: appconfig.WrapAny(&tokenfactorymodulev1.Module{}),
 			},
 			// this line is used by starport scaffolding # stargate/app/moduleConfig
 		},

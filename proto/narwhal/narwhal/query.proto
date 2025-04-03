@@ -5,9 +5,9 @@ import "amino/amino.proto";
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
-import "github.com/uwupunks/narwhal/narwhal/params.proto";
+import "narwhal/narwhal/params.proto";
 
-option go_package = "github.com/uwupunks/narwhal/x/narwhal/types";
+option go_package = "narwhal/x/narwhal/types";
 
 // Query defines the gRPC querier service.
 service Query {

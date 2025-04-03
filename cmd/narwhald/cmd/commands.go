@@ -30,6 +30,7 @@ import (
 
 	"github.com/CosmWasm/wasmd/x/wasm"
 	wasmcli "github.com/CosmWasm/wasmd/x/wasm/client/cli"
+	tfcli "github.com/uwupunks/narwhal/x/narwhal/tokenfactory/client/cli"
 )
 
 func initRootCmd(
@@ -58,7 +59,8 @@ func initRootCmd(
 		queryCommand(),
 		txCommand(),
 		keys.Commands(),
-
+		tfcli.GetTxCmd(),
+		tfcli.GetQueryCmd(),
 		// FIX for https://github.com/ignite/cli-plugin-network/issues/27#issuecomment-2016686470
 		genutilcli.GenTxCmd(basicManager, txConfig, banktypes.GenesisBalancesIterator{}, app.DefaultNodeHome, txConfig.SigningContext().ValidatorAddressCodec()),
 		genutilcli.MigrateGenesisCmd(genutilcli.MigrationMap),

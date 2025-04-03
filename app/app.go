@@ -77,6 +77,8 @@ import (
 
 	narwhalmodulekeeper "github.com/uwupunks/narwhal/x/narwhal/keeper"
 	// this line is used by starport scaffolding # stargate/app/moduleImport
+	tokenfactorytypes "github.com/uwupunks/narwhal/x/narwhal/tokenfactory/types"
+	tokenfactorymodule "github.com/uwupunks/narwhal/x/narwhal/tokenfactory"
 
 	wasmkeeper "github.com/CosmWasm/wasmd/x/wasm/keeper"
 	tmproto "github.com/cometbft/cometbft/proto/tendermint/types"
@@ -194,6 +196,12 @@ func AppConfig() depinject.Config {
 				// this line is used by starport scaffolding # stargate/appConfig/moduleBasic
 			},
 		),
+		depinject.Provide(tokenfactorymodule.NewAppModule),
+		depinject.Provide(func() map[string]*storetypes.KVStoreKey {
+			return map[string]*storetypes.KVStoreKey{
+				tokenfactorytypes.StoreKey: storetypes.NewKVStoreKey(tokenfactorytypes.StoreKey),
+			}
+		}),
 	)
 }
 

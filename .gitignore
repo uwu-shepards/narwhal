@@ -8,3 +8,4 @@ release/
 *.dot
 *.log
 *.ign
+build/
