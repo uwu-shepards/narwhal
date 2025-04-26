@@ -14,6 +14,11 @@ https://narwhal.uwupunks.com/
 346557c007aeb7fc28ce8a53ac8322faf8d087f7@kaijunicorn.uwupunks.com:26656
 ```
 
+### Explorer
+```
+https://explorer.uwupunks.com/narwhal
+```
+
 Never forget what they took from us
 
 ▄︻デ ══‐一 ❤️
