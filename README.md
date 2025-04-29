@@ -73,6 +73,16 @@ cd ~/.narwhal/config
 curl -s https://rpc.uwupunks.com/genesis | jq -r '.result.genesis' > genesis.json
 ```
 
+### Configure Firewall
+```
+sudo ufw limit 26656
+```
+
+### Configure Port Forwarding on your router
+```
+26656/tcp
+```
+
 ### Start the chain
 ```
 narwhal start
